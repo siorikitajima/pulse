@@ -14,7 +14,7 @@ var querHate = 'hate -love -happy -sex -enjoy -warmth -sweet -lovely -happiness 
 var querLove = 'love -hate -kill -murder -sex -disgusting -hatred -is:retweet -is:reply -has:links -has:mentions lang:en';
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the mood of the world back door. <a href="https://182.patternbased.com/pulse/">This is the front door.</a>')
+    res.send('Welcome to the mood API. <a href="https://pulse.patternbased.com/">This is the front page.</a>')
 });
 
 app.get('/tweets', async (req, res) => {
