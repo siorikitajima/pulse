@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pulse.css">
+    <!-- <script src="https://d3js.org/d3.v5.js"></script> -->
+    <script src="./js/d3.v5.js"></script>
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js" type="text/javascript"></script> -->
+    <script src="./js/tone.min.v13.0.1.js"></script>
+    <title>Pulse of Love and Hate</title>
+    <link rel="icon"  type="image/png"  href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="1512x512" href="logo512.png" />
+    <link rel="icon" sizes="192x192" href="logo192.png" />
+</head>
+<body>
+    <div class="header">
+        <div class="headerLeft" onclick="rightPanelClose()">PULSE of LOVE and HATE</div>
+        <!-- <div> :: Pulse of Love and Hate :: </div> -->
+        <div class="headerRight" onclick="rightPanelMove()">SOURCE</div>
+    </div>
+    
+    <div class="rightPanel">
+        <div>
+            <p><b>Pulse of Love and Hate</b> is an interactive and sonified data visualization of the hourly occurance of the words 'Love' and 'Hate' in Twitter. Many users spend time reading various online news platforms and social media without knowing how biased, curated, or personalized the content is. This project started from a simple question "Does the world actually feel the way it appears to me online?.. or are a series of algorithms behind my notion of the mood of the world?" This simple info-art lets us see the real number of one small aspect of people's emotional mood by their tweets. Come take a peak at how and what people 'Love' and 'Hate' at this very moment.</p>
+
+            <h3>:: Legend ::</h3>
+            <p id="legHate" onmouseover="hateFocus()" onmouseout="hateUnFocus()">The Hate chart is hanging down from the top of the screen</p>
+            <p id="legLove" onmouseover="loveFocus()" onmouseout="loveUnFocus()">The Love chart is rising up from the bottom of the screen</p>
+            <p id="legHandle" onmouseover="showHandle()">You can move this handle to the left to change the hourly number</p>
+            <p>The sound and color changes for the ratio of Hate and Love on the selected time. More Love = happier, more Hate = darker.</p>
+            <p>The highest numbers of Hate and Love are indicated with little bubbles.</p>
+
+            <h3>:: LOVE vs HATE ::</h3>
+            <p>This app counts number of all tweets with 'Love' and 'Hate' hourly in the last three days. Queries used for the search are below. Retweets, Replies, and tweets @mentioning other Twitter users and having outside links are excluded.</p>
+            <p><b>LOVE</b> = Tweets including the keyword 'Love', and not including keywords 'hate' 'kill' 'die' 'murder' 'sex' 'disgusting' 'hatred'</p>
+            <p><b>HATE</b> = Tweets including the keyword 'Hate', and not including keywords 'love' 'happy' 'enjoy' 'warmth' 'sex' 'sweet' 'lovely' 'happiness'</p>
+            <p>Real time new tweets of Love and Hate are displayed every 10 seconds or so.</p>
+
+            <h3>:: Credits ::</h3>
+            <p>Concept by <a href='https://www.josephminadeo.com' target='_blank'>Joseph Minadeo</a> + <a href='https://www.siorikitajima.com' target='_blank'>Siori Kitajima</a><br/>
+            Art and Code by Siori Kitajima<br/>
+            Sound by Joseph Minadeo<br/>
+            Created in an online artist residency program 2020 - 2021 by <a href='https://www.perfec-art.com/' target='_blank'>Buckwheat Space</a></p>
+
+            <p>Made with amazing tools: <a href='https://d3js.org/' target='_blank'>D3.js</a>, <a href='https://tonejs.github.io/' target='_blank'>Tone.js</a>, <a href='https://www.npmjs.com/package/twitter-api-v2' target='_blank'>Twitter API v2</a>, <a href='https://developer.twitter.com/' target='_blank'>Twitter API</a> and more</p>
+            <p>Thank you <a href='https://www.yvonnebuchanan-art.com/' target='_blank'>Yvonne Buchanan</a>, <a href='https://dorenequinn-artist.com/' target='_blank'>Dorene Quinn</a>, <a href='#' target='_blank'>Aaron Brewer</a>, <a href='http://nuclearpixel.com/' target='_blank'>Admiral Potato</a>, Yugo Kitajima, amazing tutorials by <a href='https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg' target='_blank'>The Net Ninja</a>, <a href='https://www.youtube.com/user/shiffman' target='_blank'>The Coding Train</a>, Corrabelle and Orlando.
+            </p>
+            
+            <p>Powered by <a href='https://www.patternbased.com/' target='_blank'>PatternBased</a><br/>
+            Released under <a href='https://opensource.org/licenses/MIT' target='_blank'>MIT License</a><br/>
+            Copyright © 2021-2022 Siori Kitajima, Joseph Minadeo and PatternBased</p>
+        </div>
+    </div>
+    <div class="wrapper">
+    </div>
+    <script src="pulse.js"></script>
+    <div id="modalBG">
+        <div class="loadingSpinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
+</body>
+</html>
